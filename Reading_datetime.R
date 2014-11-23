@@ -28,3 +28,8 @@ hpc = read.table(file, header = TRUE, sep = ";",
 		colClasses = c("myDate", "myTime", rep("numeric", 7)),
 		strip.white = TRUE, blank.lines.skip = TRUE
 );
+
+period <- c(as.POSIXct("2007-02-01"), as.POSIXct("2007-02-02"));
+#as.POSIXct("2007-02-01") %in% period
+
+hpc <- hpc[hpc$Date %in% period,];
